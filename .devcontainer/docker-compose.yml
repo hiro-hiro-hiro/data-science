@@ -1,4 +1,12 @@
-FROM rocker/tidyverse:latest
-RUN install2.r --error \
-    --deps TRUE \
-    languageserver
+version: '3'
+services:
+    rstudio:
+        env_file: .env
+        build:
+            context: .
+        environment:
+            - TZ=Asia/Tokyo
+        ports:
+            - "8787:8787"
+        volumes:
+            - .:/home/rstudio/work
