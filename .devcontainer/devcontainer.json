@@ -1,11 +1,14 @@
 {
-    "name": "jupyter-devcontainer-project",
-    "dockerComposeFile": [
-        "./docker-compose.yml"
-    ],
-    "service": "jupyter-minimal",//ここのサービス名は上のdocker-compose.ymlで示した※2のサービス名と一致させる
+    "name": "${localWorkspaceFolderBasename}",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "rstudio",
+    "remoteUser": "rstudio",
     "extensions": [
-        "ms-python.python"
+        "ikuyadeu.r",
+        "reditorsupport.r-lsp"
     ],
-    "workspaceFolder": "/home/jovyan/work"
-} 
+    "workspaceFolder": "/home/rstudio/work",
+    "shutdownAction": "stopCompose",
+    "settings": {
+    }
+}
