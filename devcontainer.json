@@ -1,0 +1,11 @@
+{
+    "name": "jupyter-devcontainer-project",
+    "dockerComposeFile": [
+        "./docker-compose.yml"
+    ],
+    "service": "jupyter-minimal",//ここのサービス名は上のdocker-compose.ymlで示した※2のサービス名と一致させる
+    "extensions": [
+        "ms-python.python"
+    ],
+    "workspaceFolder": "/home/jovyan/work"
+} 
