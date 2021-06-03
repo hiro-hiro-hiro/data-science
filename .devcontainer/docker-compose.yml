@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  jupyter-minimal: ※2
+    build: . #ビルド対象のDockerfileが同じフォルダ内にあるためピリオド(.)を打つ
+    environment: 
+      # - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    working_dir: /home/jovyan/work
+    user: root
+    volumes: # ホストとのボリューム共有。../workは上のフォルダ構造で示した※1の一つ上の階層のworkフォルダを指し示す。
+      - ../work:/home/jovyan/work
